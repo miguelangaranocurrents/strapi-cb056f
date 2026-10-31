@@ -797,8 +797,12 @@ const RelationModalWithContext = ({
           }
           hasMoreItems={hasNextPage}
           loading={isLoadingSearchRelations || isLoadingPermissions}
-          onOpenChange={() => {
-            handleSearch(textValue ?? '');
+          onOpenChange={(isOpen?: boolean) => {
+            /**
+             * When closing (e.g. after selecting an option) the text value is the label of the
+             * selected option, searching for it would leave stale results for the next opening.
+             */
+            handleSearch(isOpen ? (textValue ?? '') : '');
           }}
           noOptionsMessage={() =>
             formatMessage({
