@@ -129,7 +129,6 @@ const relationsApi = contentManagerApi.injectEndpoints({
           // Each entity (e.g. every component instance of a dynamic zone) has its own available relations
           id: queryArgs.params?.id,
           locale: queryArgs.params?.locale,
-          status: queryArgs.params?.status,
           _q: queryArgs.params?._q,
           idsToOmit: queryArgs.params?.idsToOmit,
           idsToInclude: queryArgs.params?.idsToInclude,
